@@ -5009,9 +5009,9 @@
         "explorerTxLink": "https://explorer.nexell-ia.net/txs/{0}",
         "explorerAccountLink": "https://explorer.nexell-ia.net/addresses/{0}"
     },
-    "consensus-network": {
-        "name": "Consensus-Network",
-        "canonicalName": "Consensus-Network",
+    "consensus": {
+        "name": "Consensus",
+        "canonicalName": "Consensus",
         "symbol": "CSS",
         "family": "kaspa",
         "website": "",
