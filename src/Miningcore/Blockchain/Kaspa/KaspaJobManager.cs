@@ -275,16 +275,6 @@ public class KaspaJobManager : JobManagerBase<KaspaJob>
                 return new KarlsencoinJob(customBlockHeaderHasher, customCoinbaseHasher, customShareHasher);
             case "NTL":
             case "CSS":
-                if(customBlockHeaderHasher is not Blake2b)
-                    customBlockHeaderHasher = new Blake2b(Encoding.UTF8.GetBytes(KaspaConstants.CoinbaseBlockHash));
-
-                if(customCoinbaseHasher is not Blake3)
-                    customCoinbaseHasher = new Blake3();
-
-                if(customShareHasher is not CShake256)
-                    customShareHasher = new CShake256(null, Encoding.UTF8.GetBytes(KaspaConstants.CoinbaseHeavyHash));
-
-                return new KarlsencoinJob(customBlockHeaderHasher, customCoinbaseHasher, customShareHasher);
             case "NXL":
                 if(customBlockHeaderHasher is not Blake2b)
                     customBlockHeaderHasher = new Blake2b(Encoding.UTF8.GetBytes(KaspaConstants.CoinbaseBlockHash));
