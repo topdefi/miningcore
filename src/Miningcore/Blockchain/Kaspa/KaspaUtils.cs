@@ -413,8 +413,7 @@ public class KaspaAddressUtility
                     { ConsensusNetworkConstants.ChainPrefixSimnet, KaspaBech32Prefix.KaspaSim },
                 };
                 
-                break;
-            
+                break;           
             case "NXL":
                 this.stringsToBech32Prefixes = new Dictionary<string, KaspaBech32Prefix>
                 {
