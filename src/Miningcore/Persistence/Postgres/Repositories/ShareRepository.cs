@@ -82,6 +82,13 @@ public class ShareRepository : IShareRepository
         return con.QuerySingleAsync<double?>(query, new { poolId, shareConst, start, end });
     }
 
+    public Task<double?> GetMinerEffortBetweenCreatedAsync(IDbConnection con, string poolId, string miner, DateTime start, DateTime end)
+    {
+        const string query = "SELECT SUM(difficulty / networkdifficulty) FROM shares WHERE poolid = @poolId AND miner = @miner AND created > @start AND created < @end";
+
+        return con.QuerySingleAsync<double?>(query, new { poolId, miner, start, end });
+    }
+    
     public async Task DeleteSharesByMinerAsync(IDbConnection con, IDbTransaction tx, string poolId, string miner, CancellationToken ct)
     {
         const string query = "DELETE FROM shares WHERE poolid = @poolId AND miner = @miner";
