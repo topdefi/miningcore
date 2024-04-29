@@ -119,6 +119,21 @@ public class BlockRepository : IBlockRepository
             .FirstOrDefault();
     }
     
+    public async Task<Block> GetMinerBlockBeforeAsync(IDbConnection con, string poolId, string miner, BlockStatus[] status, DateTime before)
+    {
+        const string query = @"SELECT * FROM blocks WHERE poolid = @poolid AND miner = @miner AND status = ANY(@status) AND created < @before
+            ORDER BY created DESC FETCH NEXT 1 ROWS ONLY";
+        return (await con.QueryAsync<Entities.Block>(query, new
+        {
+            poolId,
+            miner,
+            before,
+            status = status.Select(x => x.ToString().ToLower()).ToArray()
+        }))
+            .Select(mapper.Map<Block>)
+            .FirstOrDefault();
+    }
+
     public async Task<uint> GetBlockBeforeCountAsync(IDbConnection con, string poolId, BlockStatus[] status, DateTime before)
     {
         const string query = @"SELECT * FROM blocks WHERE poolid = @poolid AND status = ANY(@status) AND created < @before";
@@ -152,6 +167,12 @@ public class BlockRepository : IBlockRepository
         return con.ExecuteScalarAsync<DateTime?>(query, new { poolId });
     }
     
+    public Task<DateTime?> GetLastMinerBlockTimeAsync(IDbConnection con, string poolId, string address)
+    {
+        const string query = @"SELECT created FROM blocks WHERE poolid = @poolId AND miner = @address ORDER BY created DESC LIMIT 1";
+        return con.ExecuteScalarAsync<DateTime?>(query, new { poolId, address });
+    }
+
     public async Task<Block> GetBlockByPoolHeightAndTypeAsync(IDbConnection con, string poolId, long height, string type)
     {
         const string query = @"SELECT * FROM blocks WHERE poolid = @poolId AND blockheight = @height AND type = @type";
