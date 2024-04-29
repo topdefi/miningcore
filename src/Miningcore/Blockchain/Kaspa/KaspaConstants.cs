@@ -113,7 +113,6 @@ public static class ConsensusNetworkConstants
     public const string ChainPrefixTestnet = "consensustest";
     public const string ChainPrefixMainnet = "consensus";
     
-    public const long FishHashForkHeightTestnet = 0;
 }
 
 public static class NexelliaConstants
