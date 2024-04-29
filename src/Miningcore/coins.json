@@ -2394,6 +2394,36 @@
         "explorerTxLink": "https://exploreblockchain.clore.ai/tx/{0}",
         "explorerAccountLink": "https://exploreblockchain.clore.ai/address/{0}"
     },
+    "aittcoin": {
+        "name": "Aittcoin",
+        "symbol": "AITT",
+        "family": "progpow",
+        "website": "https://aittcoin.org/",
+        "market": "",
+        "twitter": "https://twitter.com/AITTCOIN",
+        "telegram": "https://t.me/AITTCOIN",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasCommunityAddress": true,
+        "shareMultiplier": 1,
+        "progpower": "kawpow",
+        "explorerBlockLink": "https://explorer.aittcoin.org/block/$hash$",
+        "explorerTxLink": "https://explorer.aittcoin.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.aittcoin.org/address/{0}"
+    },
     "meowcoin": {
         "name": "Meowcoin",
         "symbol": "MEWC",
@@ -2447,6 +2477,7 @@
                 }
             ]
         },
+        "hasCommunityAddress": true,
         "shareMultiplier": 1,
         "progpower": "kawpow",
         "explorerBlockLink": "https://explorer.aipowergrid.io/block/$hash$",
@@ -4950,9 +4981,9 @@
         "explorerTxLink": "https://explorer.karlsencoin.com/txs/{0}",
         "explorerAccountLink": "https://explorer.karlsencoin.com/addresses/{0}"
     },
-    "nautilus-network": {
-        "name": "Nautilus-Network",
-        "canonicalName": "Nautilus-Network",
+    "nautilus": {
+        "name": "Nautilus",
+        "canonicalName": "Nautilus",
         "symbol": "NTL",
         "family": "kaspa",
         "website": "https://nautilus-network.net/",
@@ -4977,6 +5008,20 @@
         "explorerBlockLink": "https://explorer.nexell-ia.net/blocks/$hash$",
         "explorerTxLink": "https://explorer.nexell-ia.net/txs/{0}",
         "explorerAccountLink": "https://explorer.nexell-ia.net/addresses/{0}"
+    },
+    "consensus-network": {
+        "name": "Consensus-Network",
+        "canonicalName": "Consensus-Network",
+        "symbol": "CSS",
+        "family": "kaspa",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "https://discord.com/invite/MHn4wStC4h",
+        "explorerBlockLink": "https://explorer.consensus-network.com/blocks/$hash$",
+        "explorerTxLink": "https://explorer.consensus-network.com/txs/{0}",
+        "explorerAccountLink": "https://explorer.consensus-network.com/addresses/{0}"
     },
     "pyrin": {
         "name": "Pyrin",
@@ -5005,5 +5050,154 @@
         "explorerBlockLink": "https://explorer.sedracoin.com/blocks/$hash$",
         "explorerTxLink": "https://explorer.sedracoin.com/txs/{0}",
         "explorerAccountLink": "https://explorer.sedracoin.com/addresses/{0}"
+	},
+	"reaction": {
+        "name": "Reaction",
+        "canonicalName": "Reaction",
+        "symbol": "RTC",
+        "family": "bitcoin",
+        "website": "https://reaction.network/",
+        "market": "",
+        "twitter": "https://twitter.com/Reaction_core",
+        "telegram": "https://t.me/reaction_core",
+        "discord": "https://discord.com/invite/UTpJgqPNJd",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "ghostrider"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "foundersRewardAddress": [
+            "Riop19LfK8sVzuzPLNPUq6vSFTAoc8Yxen"
+        ],
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.reaction.network/block/$height$",
+        "explorerTxLink": "https://explorer.reaction.network/tx/{0}",
+        "explorerAccountLink": "https://explorer.reaction.network/address/{0}"
+    },
+    "metachain": {
+        "name": "Metachain",
+        "canonicalName": "Metachain",
+        "symbol": "META",
+        "family": "ethereum",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "explorerBlockLinks": {
+            "block": "https://metaexplorer.org/blocks/$height$",
+            "uncle": "https://metaexplorer.org/uncles/$height$"
+        },
+        "explorerTxLink": "https://metaexplorer.org/tx/{0}",
+        "explorerAccountLink": "https://metaexplorer.org/address/{0}",
+        "ethasher": "ethash"
+    },
+    "anokas": {
+        "name": "Anokas",
+        "symbol": "ANOK",
+        "family": "progpow",
+        "website": "https://anokas.tech/",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "foundersRewardAddress": ["ATcyY7anD6ycjzJM6sa5wkx4EkddFjkwAq"],
+        "shareMultiplier": 1,
+        "progpower": "kawpow",
+        "explorerBlockLink": "https://explorer.anokas.tech/block/$hash$",
+        "explorerTxLink": "https://explorer.anokas.tech/tx/{0}",
+        "explorerAccountLink": "https://explorer.anokas.tech/address/{0}"
+    },
+    "neoxa": {
+        "name": "Neoxa",
+        "symbol": "NEOX",
+        "family": "progpow",
+        "progpower": "kawpow",
+        "website": "https://www.neoxa.net/",
+        "market": "https://www.coingecko.com/en/coins/neoxa",
+        "twitter": "https://twitter.com/NeoxaNet",
+        "telegram": "https://t.me/Neoxanet",
+        "discord": "https://discord.com/invite/frYkQqrAwR",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "foundersRewardAddress": ["GTbBCJzqRWyFBMrap2fY39eZaXnLnojJ3F"],
+        "shareMultiplier": 1,
+        "explorerBlockLink": "https://explorer.neoxa.net/block/$hash$",
+        "explorerTxLink": "https://explorer.neoxa.net/tx/{0}",
+        "explorerAccountLink": "https://explorer.neoxa.net/address/{0}"
+    },
+    "aidpcoin": {
+        "name": "Aidpcoin",
+        "symbol": "AIDP",
+        "family": "progpow",
+        "progpower": "kawpow",
+        "website": "https://www.ai-depin.org",
+        "market": "",
+        "twitter": "https://twitter.com/AIDePIN_org",
+        "telegram": "",
+        "discord": "https://discord.gg/3HCqPzSsuZ",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasCommunityAddress": true,
+        "shareMultiplier": 1,
+        "explorerBlockLink": "https://explorer.ai-depin.org/block/$hash$",
+        "explorerTxLink": "https://explorer.ai-depin.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.ai-depin.org/address/{0}"
     }
 }
