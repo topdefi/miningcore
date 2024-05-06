@@ -5229,5 +5229,37 @@
         "explorerBlockLink": "https://explorer.xenixchain.com/block/$hash$",
         "explorerTxLink": "https://explorer.xenixchain.com/tx/{0}",
         "explorerAccountLink": "https://explorer.xenixchain.com/address/{0}"
+    },
+	"tequichain": {
+        "name": "TequiChain",
+        "canonicalName": "TequiChain",
+        "symbol": "TEQ",
+        "family": "bitcoin",
+        "website": "https://tequichain.com/",
+        "market": "",
+        "twitter": "https://twitter.com/TequiChain",
+        "telegram": "https://t.me/TequiChain",
+        "discord": "https://discord.gg/FuqqttV6mu",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "ghostrider"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.tequichain.com/block/$height$",
+        "explorerTxLink": "https://explorer.tequichain.com/tx/{0}",
+        "explorerAccountLink": "https://explorer.tequichain.com/address/{0}"
     }
 }
