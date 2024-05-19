@@ -216,7 +216,6 @@ public class KaspaJobManager : JobManagerBase<KaspaJob>
         switch(coin.Symbol)
         {
             case "CAS":
-            case "PUG":
             case "HTN":
                 if(customBlockHeaderHasher is not Blake3)
                 {
@@ -276,6 +275,7 @@ public class KaspaJobManager : JobManagerBase<KaspaJob>
                 return new KarlsencoinJob(customBlockHeaderHasher, customCoinbaseHasher, customShareHasher);
             case "NTL":
             case "CSS":
+            case "PUG":
             case "NXL":
                 if(customBlockHeaderHasher is not Blake2b)
                     customBlockHeaderHasher = new Blake2b(Encoding.UTF8.GetBytes(KaspaConstants.CoinbaseBlockHash));
