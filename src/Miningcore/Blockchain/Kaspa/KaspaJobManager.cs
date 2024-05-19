@@ -216,6 +216,7 @@ public class KaspaJobManager : JobManagerBase<KaspaJob>
         switch(coin.Symbol)
         {
             case "CAS":
+            case "PUG"
             case "HTN":
                 if(customBlockHeaderHasher is not Blake3)
                 {

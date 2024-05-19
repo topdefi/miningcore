@@ -105,6 +105,15 @@ public static class NautilusConstants
     public const string ChainPrefixMainnet = "nautilus";
 }
 
+public static class PugdagConstants
+{
+    // List of PUG prefixes: https://github.com/Pugdag/pugdagd/blob/main/util/address.go
+    public const string ChainPrefixDevnet = "pugdagdev";
+    public const string ChainPrefixSimnet = "pugdagsim";
+    public const string ChainPrefixTestnet = "pugdagtest";
+    public const string ChainPrefixMainnet = "pugdag";
+}
+
 public static class ConsensusNetworkConstants
 {
     // List of CSS prefixes: https://github.com/consensus-network/consensusd/blob/main/util/address.go
