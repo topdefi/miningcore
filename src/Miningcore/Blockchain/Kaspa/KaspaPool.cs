@@ -58,6 +58,20 @@ public class KaspaPool : PoolBase
         context.UserAgent = requestParams.FirstOrDefault()?.Trim();
         context.IsLargeJob = manager.ValidateIsLargeJob(context.UserAgent);
 
+        //Ban if using an iceriver
+        TimeSpan IceRiverBanTimeout = TimeSpan.FromSeconds(600);
+        if (Regex.IsMatch(input, ".*" + Regex.Escape(context.UserAgent) + ".*"))
+        {
+            // issue short-time ban if unauthorized to prevent DDos on daemon (validateaddress RPC)
+            logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized worker {minerName} for {IceRiverBanTimeout.TotalSeconds} sec");
+
+            banManager.Ban(connection.RemoteEndpoint.Address, IceRiverBanTimeout);
+
+            Disconnect(connection);
+            return; // Exit from the method if iceriver
+
+        }
+
         if(manager.ValidateIsGodMiner(context.UserAgent))
         {
             var data = new object[]

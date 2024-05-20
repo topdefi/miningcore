@@ -112,7 +112,6 @@ public static class PugdagConstants
     public const string ChainPrefixSimnet = "pugdagsim";
     public const string ChainPrefixTestnet = "pugdagtest";
     public const string ChainPrefixMainnet = "pugdag";
-    public static readonly Regex RegexUserAgentIceRiverMiner = new("iceriverminer", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 }
 
 public static class ConsensusNetworkConstants
