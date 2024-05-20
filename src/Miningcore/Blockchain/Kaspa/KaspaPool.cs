@@ -60,11 +60,12 @@ public class KaspaPool : PoolBase
         context.IsLargeJob = manager.ValidateIsLargeJob(context.UserAgent);
 
         //Ban if using an iceriver
+        string userAgentBan = context.UserAgent;
+        string banPattern = ".*iceriver*.";
         TimeSpan IceRiverBanTimeout = TimeSpan.FromSeconds(600);
-        if (Regex.IsMatch(context.UserAgent, ".*" + Regex.Escape(context.UserAgent) + ".*"))
-        {
+        if (Regex.IsMatch(userAgentBan, banPattern))        {
             // issue short-time ban if unauthorized to prevent DDos on daemon (validateaddress RPC)
-            logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized worker {context.Miner} for {IceRiverBanTimeout.TotalSeconds} sec");
+            logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized useragent {userAgentBan} for {IceRiverBanTimeout.TotalSeconds} sec");
 
             banManager.Ban(connection.RemoteEndpoint.Address, IceRiverBanTimeout);
 
