@@ -5,6 +5,7 @@ using System.Reactive.Threading.Tasks;
 using Autofac;
 using AutoMapper;
 using Microsoft.IO;
+using System.Text.RegularExpressions;
 using Miningcore.Blockchain.Bitcoin;
 using Miningcore.Blockchain.Kaspa.Configuration;
 using Miningcore.Configuration;
