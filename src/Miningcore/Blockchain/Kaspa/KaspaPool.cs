@@ -59,11 +59,12 @@ public class KaspaPool : PoolBase
         context.UserAgent = requestParams.FirstOrDefault()?.Trim();
         context.IsLargeJob = manager.ValidateIsLargeJob(context.UserAgent);
 
-        //Ban if using an iceriver
+        //Ban if using an iceriver with algo other then kHeavyHash
         string userAgentBan = requestParams.FirstOrDefault()?.Trim();
         string banPattern = ".*iceriver*.";
+        string coinAlgoName = coin.GetAlgorithmName();
         TimeSpan IceRiverBanTimeout = TimeSpan.FromSeconds(600);
-        if (Regex.IsMatch(userAgentBan, banPattern))        {
+        if (Regex.IsMatch(userAgentBan, banPattern) && !string.Equals(coinAlgoName, "kHeavyHash", StringComparison.OrdinalIgnoreCase))       {
             // issue short-time ban if unauthorized to prevent DDos on daemon (validateaddress RPC)
             logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized useragent {userAgentBan} for {IceRiverBanTimeout.TotalSeconds} sec");
 
