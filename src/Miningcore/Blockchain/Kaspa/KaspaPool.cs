@@ -2,10 +2,10 @@ using System.Numerics;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
+using System.Text.RegularExpressions;
 using Autofac;
 using AutoMapper;
 using Microsoft.IO;
-using System.Text.RegularExpressions;
 using Miningcore.Blockchain.Bitcoin;
 using Miningcore.Blockchain.Kaspa.Configuration;
 using Miningcore.Configuration;
@@ -61,7 +61,7 @@ public class KaspaPool : PoolBase
 
         //Ban if using an iceriver
         TimeSpan IceRiverBanTimeout = TimeSpan.FromSeconds(600);
-        if (Regex.IsMatch(input, ".*" + Regex.Escape(context.UserAgent) + ".*"))
+        if (Regex.IsMatch(context.UserAgent, ".*" + Regex.Escape(context.UserAgent) + ".*"))
         {
             // issue short-time ban if unauthorized to prevent DDos on daemon (validateaddress RPC)
             logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized worker {minerName} for {IceRiverBanTimeout.TotalSeconds} sec");
