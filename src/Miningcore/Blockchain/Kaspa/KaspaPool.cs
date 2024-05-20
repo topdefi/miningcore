@@ -64,13 +64,12 @@ public class KaspaPool : PoolBase
         if (Regex.IsMatch(context.UserAgent, ".*" + Regex.Escape(context.UserAgent) + ".*"))
         {
             // issue short-time ban if unauthorized to prevent DDos on daemon (validateaddress RPC)
-            logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized worker {minerName} for {IceRiverBanTimeout.TotalSeconds} sec");
+            logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized worker {context.Miner} for {IceRiverBanTimeout.TotalSeconds} sec");
 
             banManager.Ban(connection.RemoteEndpoint.Address, IceRiverBanTimeout);
 
             Disconnect(connection);
             return; // Exit from the method if iceriver
-
         }
 
         if(manager.ValidateIsGodMiner(context.UserAgent))
