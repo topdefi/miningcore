@@ -65,7 +65,7 @@ public class KaspaPool : PoolBase
         string coinAlgoName = coin.GetAlgorithmName();
         TimeSpan IceRiverBanTimeout = TimeSpan.FromSeconds(600);
         //if (Regex.IsMatch(userAgentBan, banPattern) && !string.Equals(coinAlgoName, "kHeavyHash", StringComparison.OrdinalIgnoreCase))       {
-        if (Regex.IsMatch(userAgentBan, banPattern))       {
+        if (Regex.IsMatch(userAgentBan, banPattern, RegexOptions.IgnoreCase) && !string.Equals(coinAlgoName, "kHeavyHash", StringComparison.OrdinalIgnoreCase))       {
             // issue short-time ban if unauthorized to prevent DDos on daemon (validateaddress RPC)
             logger.Info(() => $"[{connection.ConnectionId}] Banning unauthorized useragent {userAgentBan} for {IceRiverBanTimeout.TotalSeconds} sec");
 
