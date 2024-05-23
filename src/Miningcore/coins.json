@@ -5314,15 +5314,15 @@
     "kobradag": {
         "name": "kobradag",
         "canonicalName": "kobradag",
-        "symbol": "HTN",
+        "symbol": "KODA",
         "family": "kaspa",
         "website": "https://k0bradag.com/",
         "market": "",
-        "twitter": "https://twitter.com/HoosatNetwork",
-        "telegram": "https://t.me/HoosatNetwork",
-        "discord": "https://discord.com/invite/NzENEkxEqY",
-        "explorerBlockLink": "https://explorer.hoosat.fi/blocks/$hash$",
-        "explorerTxLink": "https://explorer.hoosat.fi/txs/{0}",
-        "explorerAccountLink": "https://explorer.hoosat.fi/addresses/{0}"
+        "twitter": "https://twitter.com/k0bradag",
+        "telegram": "https://t.me/k0bradag",
+        "discord": "https://discord.com/invite/ahnm5zENqg",
+        "explorerBlockLink": "https://explorer.kobradag.online/blocks/$hash$",
+        "explorerTxLink": "https://explorer.kobradag.online/txs/{0}",
+        "explorerAccountLink": "hhttps://explorer.kobradag.online/addresses/{0}"
     }
 }
